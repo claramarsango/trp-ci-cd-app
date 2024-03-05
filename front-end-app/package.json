@@ -11,7 +11,7 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "ci:lint": "npm run lint",
-    "ci:test": "npm run test"
+    "ci:test": "npm run coverage"
   },
   "dependencies": {
     "react": "^18.2.0",
