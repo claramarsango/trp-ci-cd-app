@@ -35,7 +35,7 @@ jobs:
       - name: SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
         with: # Muy importante esta parte, ya que le dice a SonarCloud que sólo analice el proyecto de front
-          projectBaseDir: front-end-app
+          projectBaseDir: back-end-app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_BACK }}
