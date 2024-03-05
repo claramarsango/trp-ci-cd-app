@@ -27,11 +27,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Lint
-        run: npm run ci:lint # Ejecuta el comando npm run ci:lint de nuestro repositorio. Asegurarnos que tengamos un script en el package.json que ejecute el linter que estemos usando, en este caso ESlint
-
-      - name: Test
-        run: npm run ci:test # Ejecuta el comando npm run ci:test de nuestro repositorio. Asegurarnos que tengamos un script en el package.json que ejecute el runner de testing que estemos usando
+      - name: Run Quality Checks
+        uses: ./.github/actions/code-quality
+        with:
+          app-name: 'react-app'
+          working-directory: './front-end-app'
 
       - name: SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
