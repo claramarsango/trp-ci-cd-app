@@ -15,9 +15,9 @@ runs:
   using: 'composite'
   steps:
     - name: 'Lint'
-      run: npm run ci:lint # Ejecuta el comando npm run ci:lint de nuestro repositorio. Asegurarnos que tengamos un script en el package.json que ejecute el linter que estemos usando, en este caso ESlint
+      run: cd ${{ inputs.working-directory }} && npm run ci:lint # Ejecuta el comando npm run ci:lint de nuestro repositorio. Asegurarnos que tengamos un script en el package.json que ejecute el linter que estemos usando, en este caso ESlint
       shell: bash
 
     - name: 'Test'
-      run: npm run ci:test # Ejecuta el comando npm run ci:test de nuestro repositorio. Asegurarnos que tengamos un script en el package.json que ejecute el runner de testing que estemos usando
+      run: cd ${{ inputs.working-directory }} && npm run ci:test # Ejecuta el comando npm run ci:test de nuestro repositorio. Asegurarnos que tengamos un script en el package.json que ejecute el runner de testing que estemos usando
       shell: bash
