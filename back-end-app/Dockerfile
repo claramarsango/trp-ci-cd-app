@@ -1,7 +1,8 @@
 FROM node:18-alpine
 LABEL org.opencontainers.image.source trp-ci-cd-app
 WORKDIR /app
-COPY dist .
+COPY package.json ./
+RUN npm install
+COPY . .
 EXPOSE 3000
-CMD ["node", "dist/main.js"]
-
+CMD ["node", "src/main.js"]
